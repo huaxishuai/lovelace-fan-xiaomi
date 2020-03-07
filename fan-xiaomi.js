@@ -291,7 +291,7 @@ to{transform:perspective(10em) rotateY(40deg)}
 <span class="icon-waper">
 <iron-icon icon="mdi:numeric-0-box-outline"></iron-icon>
 </span>
-Speed Level
+转速级
 </button>
 </div>
 <div class="op var-oscillating">
@@ -299,7 +299,7 @@ Speed Level
 <span class="icon-waper">
 <iron-icon icon="mdi:debug-step-over"></iron-icon>
 </span>
-Oscillate
+摇摆头
 </button>
 </div>
 <div class="op var-natural">
@@ -307,7 +307,7 @@ Oscillate
 <span class="icon-waper">
 <iron-icon icon="mdi:leaf"></iron-icon>
 </span>
-Natural
+自然风
 </button>
 </div>
 </div>
