@@ -62,13 +62,13 @@ class FanXiaomi extends HTMLElement {
             }
             // 定义事件
             ui.querySelector('.c1').onclick = () => {
-                this.log('Toggle')
+                this.log('开关')
                 hass.callService('fan', 'toggle', {
                     entity_id: entityId
                 });
             }
             ui.querySelector('.var-speed').onclick = () => {
-                this.log('Speed Level')
+                this.log('转速')
                 if (ui.querySelector('.fanbox').classList.contains('active')) {
                     let u = ui.querySelector('.var-speed')
                     let iconSpan = u.querySelector('.icon-waper')
@@ -99,7 +99,7 @@ class FanXiaomi extends HTMLElement {
                 }
             }
             ui.querySelector('.var-natural').onclick = () => {
-                //this.log('Natural')
+                //this.log('自然')
                 if (ui.querySelector('.fanbox').classList.contains('active')) {
                     let u = ui.querySelector('.var-natural')
                     if (u.classList.contains('active') === false) {
@@ -116,7 +116,7 @@ class FanXiaomi extends HTMLElement {
                 }
             }
             ui.querySelector('.var-oscillating').onclick = () => {
-                this.log('Oscillate')
+                this.log('摇摆')
                 if (ui.querySelector('.fanbox').classList.contains('active')) {
                     let u = ui.querySelector('.var-oscillating')
                     if (u.classList.contains('active') === false) {
@@ -151,6 +151,7 @@ class FanXiaomi extends HTMLElement {
             oscillating: attrs['oscillating'],
             led_brightness: attrs['led_brightness'],
             delay_off_countdown: attrs['delay_off_countdown'],
+            use_time: attrs['use_time'],
             angle: attrs['angle']
         })
     }
@@ -316,7 +317,7 @@ Natural
 
     // 设置UI值
     setUI(fanboxa, {title, natural_speed, direct_speed, state,
-        child_lock, oscillating, led_brightness, delay_off_countdown, angle
+        child_lock, oscillating, led_brightness, delay_off_countdown, use_time, angle
     }) {
 
         fanboxa.querySelector('.var-title').textContent = title
@@ -330,7 +331,7 @@ Natural
         fanboxa.querySelector('.var-angle').textContent = angle
 
         // use_time
-        let use_time_display = '0m'
+        let use_time_display = '--'
         if(delay_off_countdown) {
             let total_mins = delay_off_countdown / 60
             let hours = Math.floor(total_mins / 60)
