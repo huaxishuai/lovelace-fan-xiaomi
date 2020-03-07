@@ -272,16 +272,16 @@ to{transform:perspective(10em) rotateY(40deg)}
 </div>
 <div class="attr-row">
 <div class="attr">
-<p class="attr-title">Child Lock</p>
+<p class="attr-title">儿童锁</p>
 <p class="attr-value var-childlock">0</p>
 </div>
 <div class="attr">
-<p class="attr-title">Angle(&deg;)</p>
+<p class="attr-title">摆头角度</p>
 <p class="attr-value var-angle">120</p>
 </div>
 <div class="attr">
-<p class="attr-title">Timer</p>
-<p class="attr-value var-timer">0</p>
+<p class="attr-title">使用时间</p>
+<p class="attr-value var-use_time">0</p>
 </div>
 </div>
 <div class="op-row">
@@ -329,19 +329,19 @@ Natural
 
         fanboxa.querySelector('.var-angle').textContent = angle
 
-        // Timer
-        let timer_display = '0m'
+        // use_time
+        let use_time_display = '0m'
         if(delay_off_countdown) {
             let total_mins = delay_off_countdown / 60
             let hours = Math.floor(total_mins / 60)
             let mins = Math.ceil(total_mins % 60)
             if(hours) {
-                timer_display = `${hours}h ${mins}m`
+                use_time_display = `${hours}h ${mins}m`
             } else {
-                timer_display = `${mins}m`
+                use_time_display = `${mins}m`
             }
         }
-        fanboxa.querySelector('.var-timer').textContent = timer_display
+        fanboxa.querySelector('.var-use_time').textContent = use_time_display
 
         // LED
         let activeElement = fanboxa.querySelector('.c3')
